@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85A4C6E5-AE42-4B31-A3D4-951C56C73C9D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Proyecto_Final_Patrones_Disenio</RootNamespace>
+    <AssemblyName>Proyecto_Final_Patrones_Disenio</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractFactory\Abstract_Factory.cs" />
+    <Compile Include="AbstractFactory\Avioneta_Civil.cs" />
+    <Compile Include="AbstractFactory\Avioneta_Militar.cs" />
+    <Compile Include="AbstractFactory\Avion_Civil.cs" />
+    <Compile Include="AbstractFactory\Avion_Militar.cs" />
+    <Compile Include="AbstractFactory\Dron_Civil.cs" />
+    <Compile Include="AbstractFactory\Dron_Militar.cs" />
+    <Compile Include="AbstractFactory\Helicoptero_Civil.cs" />
+    <Compile Include="AbstractFactory\Helicoptero_Militar.cs" />
+    <Compile Include="AbstractFactory\Simulacion_Civil.cs" />
+    <Compile Include="AbstractFactory\Simulacion_Militar.cs" />
+	<Compile Include="AbstractFactory\IAeronave.cs" />
+	<Compile Include="Proxy\ISimulador.cs" />
+	<Compile Include="Proxy\SimuladorReal.cs" />
+	<Compile Include="Proxy\ProxySimulador.cs" />
+	<Compile Include="Visitor\IVisitableAeronave.cs" />
+	<Compile Include="Visitor\IVisitanteEstadisticas.cs" />
+	<Compile Include="Visitor\VisitanteConteoVuelos.cs" />
+	<Compile Include="Visitor\VisitanteCostoVuelos.cs" />
+	<Compile Include="Bridge\IFormatoSalida.cs" />
+	<Compile Include="Bridge\SalidaTexto.cs" />
+	<Compile Include="Bridge\SalidaPdf.cs" />
+	<Compile Include="Bridge\GeneradorInformes.cs" />
+	<Compile Include="Composite\IRuta.cs" />
+    <Compile Include="Composite\TramoVuelo.cs" />
+	<Compile Include="Composite\RutaCompuesta.cs" />
+	<Compile Include="Observer\IObserver.cs" />
+	<Compile Include="Observer\ISubject.cs" />
+	  <Compile Include="Observer\ObserverAereonaves.cs" />
+	  <Compile Include="Observer\TorreControl.cs" />
+	  <Compile Include="Mediator\CentralMando.cs" />
+	  <Compile Include="Mediator\Drones.cs" />
+	  <Compile Include="Mediator\IColega.cs" />
+	  <Compile Include="Mediator\IMediator.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+	  
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
